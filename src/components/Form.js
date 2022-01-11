@@ -46,7 +46,7 @@ class Form extends React.Component {
           />
         </label>
 
-        <label htmlFor='"attr1-input"'>
+        <label htmlFor="attr1-input">
           Atributo 1:
           <input
             data-testid="attr1-input"
@@ -59,12 +59,12 @@ class Form extends React.Component {
           />
         </label>
 
-        <label htmlFor='"attr2-input"'>
+        <label htmlFor="attr2-input">
           Atributo 2:
           <input
             data-testid="attr2-input"
             type="number"
-            name="cardAttr1"
+            name="cardAttr2"
             id="Attr2"
             descriptionLabel="cardAttr2"
             value={ cardAttr2 }
@@ -72,7 +72,7 @@ class Form extends React.Component {
           />
         </label>
 
-        <label htmlFor='"attr3-input"'>
+        <label htmlFor="attr3-input">
           Atributo 3:
           <input
             data-testid="attr3-input"
@@ -85,7 +85,7 @@ class Form extends React.Component {
           />
         </label>
 
-        <label htmlFor='"image-input"'>
+        <label htmlFor="image-input">
           Imagem:
           <input
             data-testid="image-input"
@@ -99,7 +99,7 @@ class Form extends React.Component {
 
         </label>
 
-        <label htmlFor='"rareImput"'>
+        <label htmlFor="rareImput">
           Raridade:
           <select
             data-testid="rare-input"
@@ -114,7 +114,7 @@ class Form extends React.Component {
           </select>
         </label>
 
-        <label htmlFor='"trunfo-input"'>
+        <label htmlFor="trunfo-input">
           Super Ttribe Trunfo:
           <input
             data-testid="trunfo-input"
