@@ -19,7 +19,7 @@ class Form extends React.Component {
     } = this.props;
 
     return (
-      <form>
+      <form className="forms">
         <label htmlFor="name-input">
           Nome:
           <input
