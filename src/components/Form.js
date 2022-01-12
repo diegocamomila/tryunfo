@@ -27,20 +27,20 @@ class Form extends React.Component {
             type="text"
             name="cardName"
             id="nameInput"
-            descriptionLabel="Nome da carta:"
+            description="Nome da carta:"
             value={ cardName }
             onChange={ onInputChange }
           />
         </label>
 
-        <label htmlFor='"description-input"'>
+        <label htmlFor="description-input">
           Descrição:
           <input
             data-testid="description-input"
             type="textarea"
             name="cardDescription"
             id="descriptionInput"
-            descriptionLabel="Descrição da carta:"
+            description="Descrição da carta:"
             value={ cardDescription }
             onChange={ onInputChange }
           />
@@ -53,7 +53,7 @@ class Form extends React.Component {
             type="number"
             name="cardAttr1"
             id="Attr1"
-            descriptionLabel="cardAttr1"
+            description="cardAttr1"
             value={ cardAttr1 }
             onChange={ onInputChange }
           />
@@ -66,7 +66,7 @@ class Form extends React.Component {
             type="number"
             name="cardAttr2"
             id="Attr2"
-            descriptionLabel="cardAttr2"
+            description="cardAttr2"
             value={ cardAttr2 }
             onChange={ onInputChange }
           />
@@ -79,7 +79,7 @@ class Form extends React.Component {
             type="number"
             name="cardAttr3"
             id="Attr3"
-            descriptionLabel="cardAttr3"
+            description="cardAttr3"
             value={ cardAttr3 }
             onChange={ onInputChange }
           />
@@ -92,7 +92,7 @@ class Form extends React.Component {
             type="text"
             name="cardImage"
             id="imageInput"
-            descriptionLabel="Imagem"
+            description="Imagem"
             value={ cardImage }
             onChange={ onInputChange }
           />
@@ -121,7 +121,7 @@ class Form extends React.Component {
             type="checkbox"
             name="cardTrunfo"
             id="trunfoInput"
-            descriptionLabel="Super Trybe Trunfo"
+            description="Super Trybe Trunfo"
             checked={ cardTrunfo }
             onChange={ onInputChange }
           />
