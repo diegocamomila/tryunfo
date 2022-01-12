@@ -18,6 +18,7 @@ class App extends React.Component {
       cardTrunfo: false,
       isSaveButtonDisabled: true,
       cardSave: [],
+      hasTrunfo: false,
     };
     this.onInputChange = this.onInputChange.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
@@ -30,7 +31,7 @@ class App extends React.Component {
   }
 
   onSaveButtonClick(event) {
-    event.preventDefault();
+    event.preventDefault(); // https://stackoverflow.com/questions/36316846/react-onclick-and-preventdefault-link-refresh-redirect
     console.log(event);
     this.setState((prevState) => {
       const { cardName,
@@ -59,6 +60,7 @@ class App extends React.Component {
         cardRare: 'normal',
         cardTrunfo: false,
         isSaveButtonDisabled: true,
+        hasTrunfo: prevState.hasTrunfo || cardTrunfo,
       };
     });
   }
@@ -102,6 +104,7 @@ class App extends React.Component {
       cardRare,
       cardTrunfo,
       isSaveButtonDisabled,
+      hasTrunfo,
     } = this.state;
 
     return (
@@ -119,6 +122,7 @@ class App extends React.Component {
           onInputChange={ this.onInputChange }
           isSaveButtonDisabled={ isSaveButtonDisabled }
           onSaveButtonClick={ this.onSaveButtonClick }
+          hasTrunfo={ hasTrunfo }
         />
 
         <Card
