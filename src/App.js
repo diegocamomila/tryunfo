@@ -23,6 +23,7 @@ class App extends React.Component {
     };
     this.onInputChange = this.onInputChange.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
+    this.deleteCard = this.deleteCard.bind(this);
   }
 
   onInputChange=({ target }) => {
@@ -94,6 +95,17 @@ class App extends React.Component {
     }
   }
 
+  deleteCard({ target }) {
+    const { cardSave } = this.state;
+    const filterCardSave = cardSave.filter((card) => card.cardName !== target.name);
+    const findTrunfo = filterCardSave.find((card) => card.cardTrunfo === true);
+    return (
+      findTrunfo
+        ? this.setState({ cardSave: filterCardSave })
+        : this.setState({ cardSave: filterCardSave, hasTrunfo: false })
+    );
+  }
+
   render() {
     const {
       cardName,
@@ -111,33 +123,39 @@ class App extends React.Component {
 
     return (
       <div className="container">
-        <h1>Tryunfo</h1>
-        <Form
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-          onInputChange={ this.onInputChange }
-          isSaveButtonDisabled={ isSaveButtonDisabled }
-          onSaveButtonClick={ this.onSaveButtonClick }
-          hasTrunfo={ hasTrunfo }
-        />
+        <section>
+          <h1>Tryunfo</h1>
+          <Form
+            cardName={ cardName }
+            cardDescription={ cardDescription }
+            cardAttr1={ cardAttr1 }
+            cardAttr2={ cardAttr2 }
+            cardAttr3={ cardAttr3 }
+            cardImage={ cardImage }
+            cardRare={ cardRare }
+            cardTrunfo={ cardTrunfo }
+            onInputChange={ this.onInputChange }
+            isSaveButtonDisabled={ isSaveButtonDisabled }
+            onSaveButtonClick={ this.onSaveButtonClick }
+            hasTrunfo={ hasTrunfo }
+          />
 
-        <Card
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
+          <Card
+            cardName={ cardName }
+            cardDescription={ cardDescription }
+            cardAttr1={ cardAttr1 }
+            cardAttr2={ cardAttr2 }
+            cardAttr3={ cardAttr3 }
+            cardImage={ cardImage }
+            cardRare={ cardRare }
+            cardTrunfo={ cardTrunfo }
+          />
+        </section>
+
+        <DeckOfCardes
+          cardSave={ cardSave }
+          deleteCard={ this.deleteCard }
         />
-        <DeckOfCardes cardSave={ cardSave } />
 
       </div>
     );

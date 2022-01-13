@@ -4,7 +4,7 @@ import Card from './Card';
 
 class DeckOfCardes extends React.Component {
   render() {
-    const { cardSave } = this.props;
+    const { cardSave, deleteCard } = this.props;
     return (
       <ul>
         {cardSave.map(
@@ -20,7 +20,6 @@ class DeckOfCardes extends React.Component {
           }) => (
             <li key={ cardName }>
               <Card
-                className="card"
                 cardName={ cardName }
                 cardDescription={ cardDescription }
                 cardAttr1={ cardAttr1 }
@@ -30,6 +29,15 @@ class DeckOfCardes extends React.Component {
                 cardRare={ cardRare }
                 cardTrunfo={ cardTrunfo }
               />
+
+              <button
+                data-testid="delete-button"
+                type="button"
+                onClick={ deleteCard }
+                name={ cardName }
+              >
+                Excluir
+              </button>
             </li>
           ),
         )}
@@ -37,10 +45,10 @@ class DeckOfCardes extends React.Component {
     );
   }
 }
+
 DeckOfCardes.propTypes = {
   cardSave: PropTypes.shape([
     {
-      className: PropTypes.string.isRequired,
       cardName: PropTypes.string.isRequired,
       cardDescription: PropTypes.string.isRequired,
       cardAttr1: PropTypes.number.isRequired,
@@ -51,6 +59,7 @@ DeckOfCardes.propTypes = {
       cardTrunfo: PropTypes.bool.isRequired,
     },
   ]).isRequired,
+  deleteCard: PropTypes.func.isRequired,
 };
 
 export default DeckOfCardes;
