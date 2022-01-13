@@ -151,7 +151,6 @@ class App extends React.Component {
             cardTrunfo={ cardTrunfo }
           />
         </section>
-
         <DeckOfCardes
           cardSave={ cardSave }
           deleteCard={ this.deleteCard }

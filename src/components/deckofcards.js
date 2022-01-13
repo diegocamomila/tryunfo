@@ -4,44 +4,47 @@ import Card from './Card';
 
 class DeckOfCardes extends React.Component {
   render() {
-    const { cardSave, deleteCard } = this.props;
+    const { cardSave,
+      deleteCard } = this.props;
     return (
-      <ul>
-        {cardSave.map(
-          ({
-            cardName,
-            cardDescription,
-            cardAttr1,
-            cardAttr2,
-            cardAttr3,
-            cardImage,
-            cardRare,
-            cardTrunfo,
-          }) => (
-            <li key={ cardName }>
-              <Card
-                cardName={ cardName }
-                cardDescription={ cardDescription }
-                cardAttr1={ cardAttr1 }
-                cardAttr2={ cardAttr2 }
-                cardAttr3={ cardAttr3 }
-                cardImage={ cardImage }
-                cardRare={ cardRare }
-                cardTrunfo={ cardTrunfo }
-              />
+      <div>
+        <ul>
+          {cardSave.map(
+            ({
+              cardName,
+              cardDescription,
+              cardAttr1,
+              cardAttr2,
+              cardAttr3,
+              cardImage,
+              cardRare,
+              cardTrunfo,
+            }) => (
+              <li key={ cardName }>
+                <Card
+                  cardName={ cardName }
+                  cardDescription={ cardDescription }
+                  cardAttr1={ cardAttr1 }
+                  cardAttr2={ cardAttr2 }
+                  cardAttr3={ cardAttr3 }
+                  cardImage={ cardImage }
+                  cardRare={ cardRare }
+                  cardTrunfo={ cardTrunfo }
+                />
 
-              <button
-                data-testid="delete-button"
-                type="button"
-                onClick={ deleteCard }
-                name={ cardName }
-              >
-                Excluir
-              </button>
-            </li>
-          ),
-        )}
-      </ul>
+                <button
+                  data-testid="delete-button"
+                  type="button"
+                  onClick={ deleteCard }
+                  name={ cardName }
+                >
+                  Excluir
+                </button>
+              </li>
+            ),
+          )}
+        </ul>
+      </div>
     );
   }
 }

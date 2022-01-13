@@ -16,28 +16,28 @@ class Card extends React.Component {
     return (
       <section className="card">
         <h1 data-testid="name-card">
-          Nome:
+          {/* Nome: */}
           {cardName}
         </h1>
         <img data-testid="image-card" src={ cardImage } alt={ cardName } />
         <h3 data-testid="description-card">
-          Descrição:
+          {/* Descrição: */}
           {cardDescription}
         </h3>
         <h3 data-testid="attr1-card">
-          Atributo 1:
+          {/* Atributo 1: */}
           {cardAttr1}
         </h3>
         <h3 data-testid="attr2-card">
-          Atributo 2:
+          {/* Atributo 2: */}
           {cardAttr2}
         </h3>
         <h3 data-testid="attr3-card">
-          Atributo 3:
+          {/* Atributo 3: */}
           {cardAttr3}
         </h3>
         <h3 data-testid="rare-card">
-          Raridade:
+          {/* Raridade: */}
           {cardRare}
         </h3>
         { cardTrunfo && <h3 data-testid="trunfo-card">Super Trunfo</h3>}
